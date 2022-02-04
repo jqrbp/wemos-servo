@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <script src="materialize.min.js"></script>
+        <script src="wshandler.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="section">
+                <h5>WIFI Setting</h5>
+                <div class="input-field">
+                    <input id="wifi-hostname" class="validate" type="text" />
+                    <label for="wifi-hostname">Hostname</label>
+                </div>
+                <div class="input-field">
+                    <input id="ssid-name" placeholder="Access Point" class="validate" type="text" />
+                    <label for="ssid-name">Access Point</label>
+                </div>
+                <div class="input-field">
+                    <input id="ssid-passwd" class="validate" type="password" >
+                    <label for="ssid-passwd">Password</label>
+                </div>
+                <div class="row">
+                    <div class="col s1 offset-s11">
+                        <button class="waves-effect waves-light btn red" onclick="ssidSaveOnlick()">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h5>WebSocket</h5>
+                <div class="input-field">
+                    <input id="wsurl" class="validate" placeholder="Websocket Address / URL" type="text" >
+                    <label for="wsurl">WebSocket URL</label>
+                </div>
+                <div class="row">
+                    <div class="col s1 offset-s11">
+                        <button class="waves-effect waves-light btn blue" onclick="wsURLOnConnect()">Connect</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h5>Servo Pulse</h5>
+            </div>
+            <div class="section">
+                <div class="row">
+                    <div class="col s3">
+                        Pulse Min:
+                        <div class="input-field inline">
+                            <input id="servo-pulse-value-min" type="text" class="validate" >
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        Pulse Max:
+                        <div class="input-field inline">
+                            <input id="servo-pulse-value-max" type="text" class="validate" >
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        Value Min:
+                        <div class="input-field inline">
+                            <input id="servo-value-min" type="text" class="validate" >
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        Value Max:
+                        <div class="input-field inline">
+                            <input id="servo-value-max" type="text" class="validate" >
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="waves-effect waves-light btn blue" onclick="servoPulseGet()">Get</button>
+                    </div>
+                    <div class="col">
+                        <button class="waves-effect waves-light btn red" onclick="servoPulseSet()">Set</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h5>Servo Position</h5>
+                <h5></h5>
+                <form action="#">
+                    <p class="range-field">
+                      <input type="range" id="servo-range" min="10" max="160" />
+                    </p>
+                </form>
+            </div>
+            <div class="row valign-wrapper">
+                <div class="col s4">
+                    Value:
+                    <div class="input-field inline">
+                        <input id="servo-range-value" type="text" class="validate" >
+                    </div>
+                </div>
+                <div class="col s4">
+                    Slider Min:
+                    <div class="input-field inline">
+                        <input id="servo-range-min" type="text" class="validate" >
+                    </div>
+                </div>
+                <div class="col s4">
+                    Slider Max:
+                    <div class="input-field inline">
+                        <input id="servo-range-max" type="text" class="validate" >
+                    </div>
+                </div>
+                <div class="col s1">
+                    <button class="waves-effect waves-light btn blue" onclick="servoRangeReset()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
